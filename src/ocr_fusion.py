@@ -40,6 +40,13 @@ def extract_numeric(text: str | None) -> str | None:
     if cleaned in ("H", "HH", "研"):
         return None
         
+    # Reject strings with month abbreviations or too many alphabetic letters (they are dates or metadata)
+    if any(m in cleaned.upper() for m in ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]):
+        return None
+    letters_count = len(re.findall(r"[A-Za-z]", cleaned))
+    if letters_count > 2:
+        return None
+        
     # Standard character correction
     if cleaned == "I":
         cleaned = "1"
