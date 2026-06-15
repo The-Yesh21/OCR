@@ -1,0 +1,48 @@
+# Datasets
+
+datasets/
+
+# OCR outputs
+
+outputs/
+
+# Python cache
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+
+venv/
+.venv/
+env/
+
+# IDE files
+
+.vscode/
+.idea/
+
+# Logs
+
+*.log
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Environment variables
+
+.env
+
+# Model weights (optional)
+
+*.pdparams
+*.pth
+*.pt
+
+# Large OCR artifacts
+
+*.onnx
+*.bin
